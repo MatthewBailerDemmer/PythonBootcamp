@@ -3,37 +3,44 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+#Initialize chrome debbuger: go on the cmd to where the chrome.exe is and run this script
+#chrome.exe -remote-debugging-port=9222 -user-data-dir=E:\chromeData
+
+#Create object of ChromeOptions Class
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_experimental_option("detach", True)
 
+#pass the debuggerAddress and pass the port along with host. Since I am running test on local so using localhost
+chrome_options.add_experimental_option("debuggerAddress", "localhost:9222 ")
+# set the driver path- You can also use WebDriverManager for drivers
+chrome_options.binary_location = "E:\\MukeshData\\chromedriver.exe"
 
-
-
+#pass ChromeOptions object to ChromeDriver constructor
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("https://tinder.com/")
-time.sleep(5)
-button_entrar = driver.find_element(By.XPATH, value='//*[@id="o515699397"]/div/div[1]/div/main/div[1]/div/div/div/div/header/div/div[2]/div[2]/a')
-button_entrar.click()
-time.sleep(5)
-button_entrar = driver.find_element(By.XPATH, value='/html/body/div[2]/main/div[1]/div/div[1]/div/div/div[2]/div[2]/span/div[3]/button')
-button_entrar.click()
-time.sleep(5)
-button_entrar = driver.find_element(By.XPATH, value='//*[@id="o-1212681679"]/main/div[1]/div[1]/div/div[2]/div/div[2]/div/div[2]/input')
-button_entrar.send_keys("0737421648")
-button_entrar.send_keys(Keys.ENTER)
-time.sleep(60)
-button_entrar = driver.find_element(By.XPATH, value='//*[@id="o-1212681679"]/main/div[2]/div/div/div[1]/div[2]/button')
-button_entrar.click()
+driver.get("https://tinder.com/app/recs")
 time.sleep(10)
-button_entrar = driver.find_element(By.XPATH, value='//*[@id="o-1212681679"]/main/div/div/div/div[3]/button[1]')
-button_entrar.click()
-time.sleep(5)
-button_entrar = driver.find_element(By.XPATH, value='//*[@id="o-1212681679"]/main/div/div/div/div[3]/button[2]')
-button_entrar.click()
-time.sleep(15)
-for i in range(5):
-    time.sleep(10)
-    button_entrar = driver.find_element(By.CSS_SELECTOR, value='#o515699397 > div > div.App__body.H\(100\%\).Pos\(r\).Z\(0\) > div > div > main > div > div > div.recsCardboard__cardsContainer.H\(100\%\).Pos\(r\).Z\(1\) > div > div.Pos\(a\).B\(0\).Iso\(i\).W\(100\%\).Start\(0\).End\(0\) > div > div.Mx\(a\).Fxs\(0\).Sq\(70px\).Sq\(60px\)--s.Bd.Bdrs\(50\%\).Bdc\(\$c-ds-border-gamepad-like-default\) > button')
-    button_entrar.click()
-#Numero de tentatias extouradas
-#Mudaram a parada
+try:
+    prop = driver.find_element(By.XPATH, value='/html/body/div[2]/main/div/div[1]/div[4]/button[2]')
+    prop.click()
+except:
+    print("Excecione")
+while True:
+    try:
+        button = driver.find_element(By.CSS_SELECTOR, value='#o515699397 > div > div.App__body.H'+
+                                                        '\(100\%\).Pos\(r\).Z\(0\) > div > main >'+
+                                                        ' div.H\(100\%\) > div > div > div.Mt\(a\).Px\(4px\)'+
+                                                        '--s.Pos\(r\).Expand.H\(--recs-card-height\)--ml.Maw'+
+                                                        '\(--recs-card-width\)--ml > div.recsCardboard__cards'+
+                                                        'Container.H\(100\%\).Pos\(r\).Z\(1\) > div > div.Pos\(a\)'+
+                                                        '.B\(0\).Iso\(i\).W\(100\%\).Start\(0\).End\(0\) > div > '+
+                                                        'div.Mx\(a\).Fxs\(0\).Sq\(70px\).Sq\(60px\)--s.Bd.Bdrs'+
+                                                        '\(50\%\).Bdc\(\$c-ds-border-gamepad-like-default\) > '+
+                                                        '   button')
+        button.click()
+    except:
+        try:
+            pop = driver.find_element(By.XPATH, value='// *[ @ id = "o-1212681679"] / main / div / div[2] / button[2]')
+            print("Deu ruim mais voltei")
+        except:
+            print("Deu RUim")
+            break
+    time.sleep(5)
