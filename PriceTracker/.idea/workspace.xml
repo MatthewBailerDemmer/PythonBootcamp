@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="959ac86d-c55b-4a1d-a681-f735ed541a93" name="Changes" comment="" />
+    <list default="true" id="959ac86d-c55b-4a1d-a681-f735ed541a93" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,8 +34,8 @@
   "keyToString": {
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "date__16__04__2024",
-    "last_opened_file_path": "D:/PythonBootcamp/day-48(selenium)"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/PythonBootcamp/SanFranciscoRentData"
   }
 }]]></component>
   <component name="SharedIndexes">
