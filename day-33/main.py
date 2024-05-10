@@ -5,7 +5,7 @@ import smtplib
 from datetime import datetime
 
 my_email = "matheusbailerdemmer@gmail.com"
-password = "kzugfeqnllouqpdl"
+password = "password"
 
 #Halmstad
 MY_LAT = 56.673969

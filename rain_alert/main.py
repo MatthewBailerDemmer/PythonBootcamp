@@ -13,8 +13,8 @@ weather_params = {
     "appid": api_key,
 }
 
-account_sid = "AC3bd1d9b23ff95534f7212e524abd3b36"
-auth_token = "efc8808667bdb9ae790729df0d07da5a"
+account_sid = "KEY"
+auth_token = "auth token"
 
 response = requests.get(OWM_Endpoint, params=weather_params)
 response.raise_for_status()
