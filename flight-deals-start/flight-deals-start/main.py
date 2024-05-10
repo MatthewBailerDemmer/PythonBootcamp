@@ -2,12 +2,12 @@
 from data_manager import DataManager
 from flight_search import FlightSearch
 from notification_manager import NotificationManager
-USER = "1cb2f60f32c7e6b85c85ee8fe606232c"
+USER = "user"
 USERNAME = "matheus"
-PASSWORD = "Cogumelos1@"
-FLIGHT_API_KEY = "Wai3aD71bWuH_2mTGQgVyjDmv6Rjs-nM"
-ACCOUNT_SID = "AC3bd1d9b23ff95534f7212e524abd3b36"
-AUTH_TOKEN = "efc8808667bdb9ae790729df0d07da5a"
+PASSWORD = "password"
+FLIGHT_API_KEY = "key"
+ACCOUNT_SID = "sid"
+AUTH_TOKEN = "auth token"
 
 sheet = DataManager(USER, USERNAME, PASSWORD)
 flight_search = FlightSearch(FLIGHT_API_KEY)

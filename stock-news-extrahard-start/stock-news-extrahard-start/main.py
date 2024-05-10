@@ -4,8 +4,8 @@ STOCKS_API_KEY = "ZZYP4I5FA2MBDRDO"
 NEWS_API_KEY = "905b49ef05e04be3a8a9d6c87ecb710f"
 import datetime
 from twilio.rest import Client
-account_sid = "AC3bd1d9b23ff95534f7212e524abd3b36"
-auth_token = "efc8808667bdb9ae790729df0d07da5a"
+account_sid = "sid"
+auth_token = "auth token"
 
 import requests
 

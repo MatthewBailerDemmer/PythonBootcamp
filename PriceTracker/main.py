@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 my_email = "matheusbailerdemmer@gmail.com"
-password = "kzugfeqnllouqpdl"
+password = "password"
 
 URL = "https://www.amazon.com/dp/B09836V1BD/ref=sr_1_1_sspa?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3S6R0NTWR7SFU&dib=eyJ2IjoiMSJ9.K0kyXYg60JSqAEzuGuhSmXNzGPSdYsmzlsrd0J3PanR3pRlPN7AgxdxtFW01F7efltDMy18sL4khdT--6mByltoL4ajLBJULEa3RkF_HbhX2upR7FBdQYq-IcpCJw1E8vQ0hF-Q7GtmyW-sdNRmVl3EvSM0RJ-Lgh_J_vQllEupHpbTYzmpOdbpnzXn3mpdycT7e-Z6_Y1CkVY9nCf_zefK9SUjfrKThuYFspb7k_Kg.HyXNq7FxqkCpatJ_MY1PLxKixy1F1C0hcxuNVhCu1ac&dib_tag=se&keywords=telescope&qid=1713229525&sprefix=tr%2Caps%2C1828&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
