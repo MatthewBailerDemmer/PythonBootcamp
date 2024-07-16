@@ -12,7 +12,6 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 # Import your forms from the forms.py
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
-import os
 
 '''
 Make sure the required packages are installed: 
@@ -51,7 +50,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
@@ -179,7 +178,7 @@ def show_post(post_id):
             db.session.add(comment)
             db.session.commit()
         return redirect(url_for('show_post', post_id=post_id))
-    comments = db.session.execute(db.select(Comment).order_by(Comment.id.desc())).scalars().all()
+    comments = db.session.execute(db.select(Comment).where(Comment.post_id == post_id).order_by(Comment.id.desc())).scalars().all()
     requested_post = db.get_or_404(BlogPost, post_id)
     return render_template("post.html", post=requested_post, current_user=current_user
                            , comment_form=comment_form, comments=comments)
